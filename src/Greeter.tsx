@@ -3,11 +3,11 @@ const greetings = ["Hi", "Hello", "Yo", "Good Evening"];
 export default function Greeter({
   greeting,
   setGreeting,
-  name,
+  names,
 }: {
   greeting: string;
   setGreeting: Function;
-  name: string;
+  names: string;
 }) {
   return (
     <>
@@ -19,9 +19,11 @@ export default function Greeter({
           </button>
         ))}
       </p>
-      <h1>
-        {greeting} {name}!
-      </h1>
+      {names.split(",").map((name) => (
+        <h1 key={name}>
+          {greeting} {name}!
+        </h1>
+      ))}
     </>
   );
 }
