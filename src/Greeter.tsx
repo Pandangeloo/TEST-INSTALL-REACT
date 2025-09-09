@@ -1,3 +1,5 @@
+const greetings = ["Hi", "Hello", "Yo", "Good Evening"];
+
 export default function Greeter({
   greeting,
   setGreeting,
@@ -9,11 +11,13 @@ export default function Greeter({
 }) {
   return (
     <>
-      <p>Choose your greeting</p>
+      <p>Choose a greeting:</p>
       <p>
-        <button onClick={() => setGreeting("Hi")}>Hi</button>
-        <button onClick={() => setGreeting("Hello")}>Hello</button>
-        <button onClick={() => setGreeting("Yo")}>Yo</button>
+        {greetings.map((greeting) => (
+          <button key={greeting} onClick={() => setGreeting(greeting)}>
+            {greeting}
+          </button>
+        ))}
       </p>
       <h1>
         {greeting} {name}!

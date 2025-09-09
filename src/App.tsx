@@ -7,10 +7,9 @@ export default function App() {
 
   return (
     <>
-      {/* A state controlled input*/}
+      {/* A state controlled input */}
       <input value={name} onChange={(event) => setName(event.target.value)} />
-
-      {/*Mounting the Greeter commponent*/}
+      {/* Mounting the Greeter component */}
       <Greeter {...{ greeting, setGreeting, name }} />
     </>
   );
