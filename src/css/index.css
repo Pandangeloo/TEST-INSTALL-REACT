@@ -11,3 +11,8 @@
 body {
   margin: 20px;
 }
+
+button {
+  display: inline-block;
+  margin-right: 20px;
+}
