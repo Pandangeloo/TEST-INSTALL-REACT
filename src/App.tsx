@@ -3,9 +3,15 @@ import Greeter from "./Greeter";
 
 export default function App() {
   const [greeting, setGreeting] = useState("Hi");
-  const name = "Angelica";
+  const [name, setName] = useState("Jane Doe");
 
-  const allProps = { greeting, name };
+  return (
+    <>
+      {/* A state controlled input*/}
+      <input value={name} onChange={(event) => setName(event.target.value)} />
 
-  return <Greeter {...{ greeting, setGreeting, name }} />;
+      {/*Mounting the Greeter commponent*/}
+      <Greeter {...{ greeting, setGreeting, name }} />
+    </>
+  );
 }
